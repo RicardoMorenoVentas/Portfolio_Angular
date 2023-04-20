@@ -1,0 +1,60 @@
+<div ngbAccordion>
+  <div ngbAccordionItem *ngFor="let index of blogService.blog_arr">
+    <h2 ngbAccordionHeader>
+      <div [ngSwitch]="index.type_blog">
+        <div *ngSwitchCase="'tech'">
+          <button ngbAccordionButton>
+            <span>💻 {{ index.titulo }}</span>
+          </button>
+        </div>
+        <div *ngSwitchCase="'musica'">
+          <button ngbAccordionButton>
+            <span>🎵 {{ index.titulo }}</span>
+          </button>
+        </div>
+        <div *ngSwitchCase="'coche'">
+          <button ngbAccordionButton>
+            <span>🏎 {{ index.titulo }}</span>
+          </button>
+        </div>
+      </div>
+    </h2>
+    <div ngbAccordionCollapse>
+      <div ngbAccordionBody>
+        <ng-template>
+          {{ index.contenido }}<br />Tipo de blog: {{ index.type_blog
+          }}<br /><br />
+          <div [ngSwitch]="index.type_blog">
+            <div *ngSwitchCase="'tech'">
+              <button
+                [routerLink]="['/tech-blog', index.id]"
+                routerLinkActive="active"
+                class="btn btn-outline-primary text-center"
+              >
+                Leer más
+              </button>
+            </div>
+            <div *ngSwitchCase="'musica'">
+              <button
+                [routerLink]="['/music-blog', index.id]"
+                routerLinkActive="active"
+                class="btn btn-outline-primary text-center"
+              >
+                Leer más
+              </button>
+            </div>
+            <div *ngSwitchCase="'coche'">
+              <button
+                [routerLink]="['/auto-blog', index.id]"
+                routerLinkActive="active"
+                class="btn btn-outline-primary text-center"
+              >
+                Leer más
+              </button>
+            </div>
+          </div>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+</div>

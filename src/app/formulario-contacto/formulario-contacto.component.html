@@ -1,0 +1,35 @@
+<h3 class="text-center">Formulario de contacto</h3>
+<p class="text-center">
+  <small>Nombre</small><br /><input
+    type="text"
+    [(ngModel)]="formulario!.nombreSend"
+  />
+</p>
+<p class="text-center">
+  <small>Email</small><br /><input
+    type="email"
+    [(ngModel)]="formulario!.emailSend"
+  />
+</p>
+<p class="text-center">
+  <small>Mensaje</small><br /><textarea
+    cols="30"
+    rows="2"
+    [(ngModel)]="formulario!.mensaje"
+  ></textarea>
+</p>
+<div class="d-grid gap-2 col-2 mx-auto">
+  <ngb-alert
+    type="info"
+    #staticAlert
+    *ngIf="staticAlertClosed"
+    (closed)="staticAlertClosed = false"
+    >Formulario enviado. ¡Muchas gracias!</ngb-alert
+  >
+  <button
+    class="btn btn-outline-primary text-center"
+    (click)="mandarFormulario()"
+  >
+    Enviar
+  </button>
+</div>

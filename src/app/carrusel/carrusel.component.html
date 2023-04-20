@@ -1,0 +1,11 @@
+<ngb-carousel *ngIf="images">
+	<ng-template ngbSlide *ngFor="let image of images">
+		<div class="wrapper_image">
+			<img [src]="image" alt="Random slide" />
+		</div>
+		<div class="carousel-caption">
+			<h3>Disfruta de las imágenes</h3>
+			<p>Esto es un ejemplo de carrusel en Bootstrap</p>
+		</div>
+	</ng-template>
+</ngb-carousel>
