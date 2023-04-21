@@ -8,13 +8,14 @@ export class Blog{
   private _preview: string;
   private _nombre_escritor: string;
   private _fecha: Date;
+  private _valoracion: number;
   private _type_blog: string = "";
   private _musica_type?: Musica | undefined;
   private _coche_type?: Coches | undefined;
   private _tech_type?: Tecnologias | undefined;
 
 
-  constructor(titulo : string, cont : string, author : string, coche? : Coches, musica? : Musica, techs? : Tecnologias){
+  constructor(titulo : string, cont : string, author : string, val : number, coche? : Coches, musica? : Musica, techs? : Tecnologias){
     Blog.id_blog_class++;
     this._id = Blog.id_blog_class;
     this._titulo = titulo;
@@ -32,6 +33,7 @@ export class Blog{
     this._coche_type = coche;
     this._musica_type = musica;
     this._tech_type = techs;
+    this._valoracion = val;
   }
 
   public get fecha(): Date {
@@ -93,6 +95,12 @@ export class Blog{
   }
   public set preview(value: string) {
     this._preview = value;
+  }
+  public get valoracion(): number {
+    return this._valoracion;
+  }
+  public set valoracion(value: number) {
+    this._valoracion = value;
   }
 
 

@@ -36,15 +36,15 @@ export class BlogCreacionComponent implements OnInit{
   subirBlog(){
     switch (this._tipoBlog) {
       case Tipo_Blog.Coches:
-        this.servicio.blog_arr.push(new Blog(this._tituloBlog,this._contenido,this._escritoPor,this._subTipoCoche))
+        this.servicio.blog_arr.push(new Blog(this._tituloBlog,this._contenido,this._escritoPor,5,this._subTipoCoche))
         break;
 
       case Tipo_Blog.Musica:
-        this.servicio.blog_arr.push(new Blog(this._tituloBlog,this._contenido,this._escritoPor,undefined,this._subTipoMusica))
+        this.servicio.blog_arr.push(new Blog(this._tituloBlog,this._contenido,this._escritoPor,5,undefined,this._subTipoMusica))
         break;
 
       case Tipo_Blog.Tech:
-        this.servicio.blog_arr.push(new Blog(this._tituloBlog,this._contenido,this._escritoPor,undefined,undefined,this._subTipoTech))
+        this.servicio.blog_arr.push(new Blog(this._tituloBlog,this._contenido,this._escritoPor,5,undefined,undefined,this._subTipoTech))
         break;
     }
     this.route.navigate(['/blog']);

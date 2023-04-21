@@ -5,3 +5,15 @@
 h2 {
   margin-top: 10px;
 }
+
+#contenedor-habilidades {
+  display: flex;
+  flex-direction:row;
+  gap: 4em;
+  margin-left: 7em;
+}
+
+#contenedor-habilidades > div {
+  width: fit-content;
+  height: fit-content;
+}

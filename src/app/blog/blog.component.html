@@ -1,59 +1,61 @@
-<div ngbAccordion>
-  <div ngbAccordionItem *ngFor="let index of blogService.blog_arr">
-    <h2 ngbAccordionHeader>
-      <div [ngSwitch]="index.type_blog">
-        <div *ngSwitchCase="'tech'">
-          <button ngbAccordionButton>
-            <span>💻 {{ index.titulo }} <br><small>{{index.fecha}}</small></span>
-          </button>
-        </div>
-        <div *ngSwitchCase="'musica'">
-          <button ngbAccordionButton>
-            <span>🎵 {{ index.titulo }} <br><small>{{index.fecha}}</small></span>
-          </button>
-        </div>
-        <div *ngSwitchCase="'coche'">
-          <button ngbAccordionButton>
-            <span>🏎 {{ index.titulo }} <br><small>{{index.fecha}}</small></span>
-          </button>
-        </div>
-      </div>
-    </h2>
-    <div ngbAccordionCollapse>
-      <div ngbAccordionBody>
-        <ng-template>
-          {{ index.preview }}<br />Tipo de blog: {{ index.type_blog
-          }}<br /><br />
-          <div [ngSwitch]="index.type_blog">
-            <div *ngSwitchCase="'tech'">
-              <button
-                [routerLink]="['/tech-blog', index.id]"
-                routerLinkActive="active"
-                class="btn btn-outline-primary text-center"
-              >
-                Leer más
-              </button>
-            </div>
-            <div *ngSwitchCase="'musica'">
-              <button
-                [routerLink]="['/music-blog', index.id]"
-                routerLinkActive="active"
-                class="btn btn-outline-primary text-center"
-              >
-                Leer más
-              </button>
-            </div>
-            <div *ngSwitchCase="'coche'">
-              <button
-                [routerLink]="['/auto-blog', index.id]"
-                routerLinkActive="active"
-                class="btn btn-outline-primary text-center"
-              >
-                Leer más
-              </button>
-            </div>
+<div id="Contenedor" class="d-grid gap-2 col-2 mx-auto">
+  <div ngbAccordion>
+    <div ngbAccordionItem *ngFor="let index of blogService.blog_arr">
+      <h2 ngbAccordionHeader>
+        <div [ngSwitch]="index.type_blog">
+          <div *ngSwitchCase="'tech'">
+            <button ngbAccordionButton>
+              <span>💻 {{ index.titulo }} <br><small>{{index.fecha}}</small><br><ngb-rating [(rate)]="index.valoracion"></ngb-rating></span>
+            </button>
           </div>
-        </ng-template>
+          <div *ngSwitchCase="'musica'">
+            <button ngbAccordionButton>
+              <span>🎵 {{ index.titulo }} <br><small>{{index.fecha}}</small><br><ngb-rating [(rate)]="index.valoracion"></ngb-rating></span>
+            </button>
+          </div>
+          <div *ngSwitchCase="'coche'">
+            <button ngbAccordionButton>
+              <span>🏎 {{ index.titulo }} <br><small>{{index.fecha}}</small><br><ngb-rating [(rate)]="index.valoracion"></ngb-rating></span>
+            </button>
+          </div>
+        </div>
+      </h2>
+      <div ngbAccordionCollapse>
+        <div ngbAccordionBody>
+          <ng-template>
+            {{ index.preview }}<br />Tipo de blog: {{ index.type_blog
+            }}<br /><br />
+            <div [ngSwitch]="index.type_blog">
+              <div *ngSwitchCase="'tech'">
+                <button
+                  [routerLink]="['/tech-blog', index.id]"
+                  routerLinkActive="active"
+                  class="btn btn-outline-primary text-center"
+                >
+                  Leer más
+                </button>
+              </div>
+              <div *ngSwitchCase="'musica'">
+                <button
+                  [routerLink]="['/music-blog', index.id]"
+                  routerLinkActive="active"
+                  class="btn btn-outline-primary text-center"
+                >
+                  Leer más
+                </button>
+              </div>
+              <div *ngSwitchCase="'coche'">
+                <button
+                  [routerLink]="['/auto-blog', index.id]"
+                  routerLinkActive="active"
+                  class="btn btn-outline-primary text-center"
+                >
+                  Leer más
+                </button>
+              </div>
+            </div>
+          </ng-template>
+        </div>
       </div>
     </div>
   </div>
