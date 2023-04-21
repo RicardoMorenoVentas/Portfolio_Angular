@@ -13,6 +13,7 @@ import { BlogTipoCocheComponent } from './blog-tipo-coche/blog-tipo-coche.compon
 import { BlogTipoMusicaComponent } from './blog-tipo-musica/blog-tipo-musica.component';
 import { BlogService } from './blogServices/blog.service';
 import { BlogTipoTechComponent } from './blog-tipo-tech/blog-tipo-tech.component';
+import { BlogCreacionComponent } from './blog-creacion/blog-creacion.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { BlogTipoTechComponent } from './blog-tipo-tech/blog-tipo-tech.component
     FormularioContactoComponent,
     BlogTipoCocheComponent,
     BlogTipoMusicaComponent,
-    BlogTipoTechComponent
+    BlogTipoTechComponent,
+    BlogCreacionComponent
   ],
   imports: [
     BrowserModule,

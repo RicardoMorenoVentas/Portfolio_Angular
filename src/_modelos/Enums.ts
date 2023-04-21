@@ -16,3 +16,9 @@ export enum Tecnologias {
   Git = "Git",
   Angular = "Angular"
 }
+
+export enum Tipo_Blog {
+  Tech = "Tech",
+  Coches = "Coches",
+  Musica = "Musica"
+}

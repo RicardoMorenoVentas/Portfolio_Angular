@@ -1,1 +1,8 @@
-<p>blog-tipo-musica works!</p>
+<h3 class="text-center">🎵 {{blog_select!.titulo}} sobre {{blog_select!.musica_type}} 🎵</h3>
+<p class="text-center"><small>Escrito por {{blog_select!.nombre_escritor}}</small></p>
+<p class="text-center">{{blog_select!.contenido}}</p>
+<p class="text-center"><small>{{blog_select!.fecha}}</small></p>
+<div class="d-grid gap-2 col-2 mx-auto">
+  <button class="btn btn-outline-primary" [routerLink]="['/blog']" routerLinkActive="active" >Regresar</button>
+</div>
+

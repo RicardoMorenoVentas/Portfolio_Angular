@@ -5,6 +5,7 @@ export class Blog{
   private _id: number;
   private _titulo: string;
   private _contenido: string;
+  private _preview: string;
   private _nombre_escritor: string;
   private _fecha: Date;
   private _type_blog: string = "";
@@ -27,6 +28,7 @@ export class Blog{
     }else{
       this._type_blog = "tech"
     }
+    this._preview = this._contenido.substring(0,20) + '...';
     this._coche_type = coche;
     this._musica_type = musica;
     this._tech_type = techs;
@@ -85,6 +87,12 @@ export class Blog{
   }
   public set type_blog(value: string) {
     this._type_blog = value;
+  }
+  public get preview(): string {
+    return this._preview;
+  }
+  public set preview(value: string) {
+    this._preview = value;
   }
 
 

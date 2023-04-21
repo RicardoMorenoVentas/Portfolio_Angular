@@ -7,6 +7,7 @@ import { FormularioContactoComponent } from './formulario-contacto/formulario-co
 import { BlogTipoTechComponent } from './blog-tipo-tech/blog-tipo-tech.component';
 import { BlogTipoMusicaComponent } from './blog-tipo-musica/blog-tipo-musica.component';
 import { BlogTipoCocheComponent } from './blog-tipo-coche/blog-tipo-coche.component';
+import { BlogCreacionComponent } from './blog-creacion/blog-creacion.component';
 
 const routes: Routes = [
   { path: 'carrusel', title:"Imágenes" ,component: CarruselComponent },
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'tech-blog/:idBlog', title:"Blog de tecnología" , component: BlogTipoTechComponent },
   { path: 'music-blog/:idBlog', title:"Blog de música" , component: BlogTipoMusicaComponent },
   { path: 'auto-blog/:idBlog', title:"Blog de coches" , component: BlogTipoCocheComponent },
+  { path: 'new-blog', title:"Nuevo artículo del blog" , component: BlogCreacionComponent },
   { path: '**', pathMatch: 'full', redirectTo: 'carrusel' },
 ];
 

@@ -1,0 +1,45 @@
+<ng-template #TipoCoche>
+  <p class="text-center"><small>Seleccione el tipo de coche de cual será el blog</small>
+    <br>
+    <select [(ngModel)]="subTipoCoche">
+      <option *ngFor="let index of opcionesCoche" [value]="index">{{index}}</option>
+    </select></p>
+</ng-template>
+
+<ng-template #TipoMusica>
+  <p class="text-center"><small>Seleccione el tipo de música del que será el blog</small>
+    <br>
+    <select [(ngModel)]="subTipoMusica">
+      <option *ngFor="let index of opcionesMusica" [value]="index">{{index}}</option>
+    </select></p>
+</ng-template>
+
+<ng-template #TipoTech>
+  <p class="text-center"><small>Seleccione el tipo de tecnología del que será el blog</small>
+    <br>
+    <select [(ngModel)]="subTipoTech">
+      <option *ngFor="let index of opcionesTech" [value]="index">{{index}}</option>
+    </select></p>
+</ng-template>
+
+
+<h3 class="text-center">Formulario de creación de nuevo artículo</h3>
+<br>
+<p class="text-center"><small>Autor del artículo*</small><br><input [(ngModel)]="escritoPor"></p>
+<p class="text-center"><small>Tipo de blog*</small><br>
+  <select [(ngModel)]="tipoBlog">
+    <option *ngFor="let index of opcionesBlog" [value]="index">{{index}}</option>
+  </select>
+</p>
+<p class="text-center"><small>Título del blog*</small><br><input [(ngModel)]="tituloBlog"></p>
+<p class="text-center"><small>Contenido</small><br><textarea cols="50"
+  rows="10" [(ngModel)]="contenido"></textarea></p>
+<div [ngSwitch]="tipoBlog">
+  <div *ngSwitchCase="'Coches'" [ngTemplateOutlet]="TipoCoche"></div>
+  <div *ngSwitchCase="'Tech'" [ngTemplateOutlet]="TipoTech"></div>
+  <div *ngSwitchCase="'Musica'" [ngTemplateOutlet]="TipoMusica"></div>
+</div>
+<div class="d-grid gap-2 col-2 mx-auto">
+  <button class="btn btn-outline-primary" (click)="subirBlog()">Subir artículo</button>
+</div>
+
